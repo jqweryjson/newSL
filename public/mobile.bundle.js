@@ -1,5 +1,5 @@
 /**
- * @version 2016-12-06
+ * @version 2016-12-07
  * @author Alexander Sofin <avlasof@mail.ru>
  * @link https://github.com/avlasof
  *

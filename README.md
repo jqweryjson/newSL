@@ -1,7 +1,5 @@
-starter-kit
+quik-start
 ========================
-
-Разработка frontend
 
 ## Зависимости
 - Node.js 4.5.0+

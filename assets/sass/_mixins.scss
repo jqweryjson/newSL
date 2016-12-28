@@ -7,6 +7,10 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-top), color-stop(100%, $color-bottom));
     background: linear-gradient($color-top 0%, $color-bottom 100%);
 }
+@mixin angle-gradient($angle,$color-top,$color-bottom) {
+    background: $color-top;
+    background: linear-gradient($angle, $color-top,$color-bottom);
+}
 
 @mixin imageSVG($image) {
     background: url('images/svg/' + $image + '.png') !important;
@@ -14,25 +18,25 @@
     background-repeat: no-repeat !important;
 }
 
-@mixin image1x($image, $type) {
+@mixin image1x($image) {
     width: width('public/images/2x/' + $image);
     height: height('public/images/2x/' + $image);
-    background: url('images/2x/' + $image) 0 0 no-repeat;
+    background: url('/images/2x/' + $image) 0 0 no-repeat;
 }
 
 @mixin image2x($image) {
-    background: url('images/1x/' + $image) 0 0 no-repeat;
+    background: url('/images/1x/' + $image) 0 0 no-repeat;
     background-size: size('public/images/1x/' + $image);
     width: width('public/images/1x/' + $image);
     height: height('public/images/1x/' + $image);
     @media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:2dppx), (min-width: 1600px) {
         & {
-            background-image: url('images/2x/' + $image);
+            background-image: url('/images/2x/' + $image);
         }
     }
 }
 @mixin image2xSize($image, $width, $height) {
-    background: url('images/1x/' + $image) 0 0 no-repeat;
+    background: url('/images/1x/' + $image) 0 0 no-repeat;
     background-size: $width $height;
     width: $width;
     height: $height;
@@ -42,6 +46,26 @@
         }
     }
 }
+@mixin image2xCenter($image) {
+    background: url('/images/1x/' + $image) center no-repeat;
+    background-size: size('public/images/1x/' + $image);
+    width: auto;
+    height: height('public/images/1x/' + $image);
+    @media (-webkit-min-device-pixel-ratio:1.5), (min-resolution:2dppx), (min-width: 1600px) {
+        & {
+            background-image: url('/images/2x/' + $image);
+        }
+    }
+}
+@mixin font-face($fontName) {
+    font-family: $fontName;
+    src: url("../fonts/"+$fontName+"/"+$fontName+".eot");
+    src: url("../fonts/"+$fontName+"/"+$fontName+".eot?#iefix")format("embedded-opentype"),
+    url("../fonts/"+$fontName+"/"+$fontName+".woff") format("woff"),
+    url("../fonts/"+$fontName+"/"+$fontName+".ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;   
+}
 
 @mixin clearfix {
   &:after {
@@ -49,4 +73,10 @@
     display: table;
     clear: both;
   }
+}
+//-mixin px to em
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
 }

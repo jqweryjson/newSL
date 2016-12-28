@@ -1,9 +1,9 @@
 /**
- * @version 2016-12-07
- * @author Alexander Sofin <avlasof@mail.ru>
- * @link https://github.com/avlasof
+ * @version 2016-12-28
+ * @author bot
+ * @link none
  *
- * Built with https://github.com/avlasof/starter-kit
+ * Built with gulp
  *
 **/
 

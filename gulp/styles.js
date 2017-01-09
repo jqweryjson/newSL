@@ -41,7 +41,7 @@ function stylesTransform(src, dist) {
         .pipe(cssBase64({
             baseDir: '../public'//подствляет бэйс64 вместо url для изображений и фонтов
         }))
-        //.pipe(cssnano())//сжимаем
+        .pipe(cssnano())//сжимаем
         .pipe(header(config.banner))//ставим хидер в файл
         .pipe(concat(dist))//собирем тока что?
         .pipe(sourcemaps.write('./map'))//пишем карту

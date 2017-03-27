@@ -6,6 +6,7 @@ module.exports = {
     dist: 'public',
     banner: '/**\n' +
         ' * @version <%= new Date().toISOString().split("T")[0] %>\n' +
+        ' * @Time <%= new Date().toISOString().split("T")[1].split(".")[0] %>\n' +
         ' * @author bot\n' +
         ' * @link none\n' +
         ' *\n' +

@@ -12,18 +12,33 @@ const config = require('../gulpconfig'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
+    notify = require('gulp-notify'),
+    plumber = require('gulp-plumber'),   //подпишется на error для одного плагина, 
+                                        //но и автоматически сделает это и для всех 
+                                       //последующих плагинов, подключенных через pipe;;
     assets = require('postcss-assets');
 
+const handleError = (error) => {
+    notify({
+        title: 'Compile error!',
+        message: '<%= error.message %>' //Перехватываем ошибки и пишем их в окно гальпа
+    }).write(error);
+};
+
+
 function stylesTransform(src, dist) {
-    let autoprefixerBrowsers = ['last 2 version', 'safari 6', 'ie 8', 'ie 9'];//префиксы для броузеров
+    let autoprefixerBrowsers = ['last 5 version', 'safari 6', 'ie 8', 'ie 9'];//префиксы для броузеров
 
     if (dist === 'mobile.bundle.css') {//если строка равна строке мобилки то только две последние версии файлов
-        autoprefixerBrowsers = ['last 2 version'];
+        autoprefixerBrowsers = ['last 5 version'];
     }
 
     return gulp.src(config.app + src)//возвращаем директорию из которой будем брать файл
         .pipe(sourcemaps.init())//пишем карту
-        .pipe(sass().on('error', function(err) {
+        .pipe(plumber({
+            errorHandler: handleError
+        }))
+       .pipe(sass().on('error', function(err) {
             gutil.log(gutil.colors.red(err.message));//утилита для гальпа чтопы ошибки были красного цвета
             gutil.beep();//это я так понял звук для ошибки
             this.emit('end');//типа стопим если ошибка

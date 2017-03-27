@@ -7,7 +7,17 @@ const config = require('../gulpconfig'),
     formatter = require('gulp-jsbeautifier'),
     htmlhint = require('gulp-htmlhint'),
     fileinclude = require('gulp-file-include'),
+    plumber = require('gulp-plumber'),   //подпишется на error для одного плагина, 
+                                        //но и автоматически сделает это и для всех 
+                                       //последующих плагинов, подключенных через pipe;;
     include = require("gulp-include");
+
+const handleError = (error) => {
+    notify({
+        title: 'Compile error!',
+        message: '<%= error.message %>' //Перехватываем ошибки и пишем их в окно гальпа
+    }).write(error);
+};
 
 gulp.task('html', function() {
     const fileincludeOptions = {
@@ -31,6 +41,9 @@ gulp.task('html', function() {
         }))
         .pipe(htmlhint(htmlhintOptions))
         .pipe(htmlhint.reporter())
+        .pipe(plumber({
+            errorHandler: handleError
+        }))
         .pipe(gulp.dest(config.dist))
         .pipe(browserSync.stream());
      });

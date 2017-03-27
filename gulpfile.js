@@ -8,6 +8,8 @@ const config = require('./gulpconfig'),
     clean = require('gulp-clean'),
     ngrok = require('ngrok');
 
+
+
 require('./gulp/styles');
 require('./gulp/templates');
 require('./gulp/images');
@@ -23,6 +25,7 @@ gulp.task('serve', ['build'], function() {
     gulp.watch(config.app + '/**/*.html', ['html']);
     gulp.watch(config.app + '/**/*.{svg,eot,ttf}', ['fonts']);
     gulp.watch(config.app + '/**/*.{png,jpg,gif,svg}', ['images']);
+    gulp.watch(config.dist + '/images/2x/*.{png,jpg,gif,svg}').on('change', browserSync.reload);
     gulp.watch(config.dist + '/*.js').on('change', browserSync.reload);
 });
 

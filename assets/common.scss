@@ -1,7 +1,32 @@
-@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "node_modules/bootstrap/scss/bootstrap-reboot.scss";
 
-
+@import "sass/_variables.scss";
 @import "sass/_mixins.scss";
 @import "sass/_default.scss";
 @import "sass/fonts.scss";
 
+//использую медиа запросы бутстрап
+//	xs- 0 - 575px
+//	sm- 576px - 767px
+//	md- 768px - 991px
+//	lg- 992px - 1199px
+//	xl- 1200px -
+//	ширина айфона 5 - 640
+//@include media-breakpoint-up(xs) {} - действует только в пределах xs 
+//@include media-breakpoint-down(sm) {} -  xs до sm
+
+
+/* .suka{
+	color:grey;
+	@include media-breakpoint-down(sm) {
+		color:red;
+	}
+} 
+ */
+
+.suka{
+	@include retina {
+
+	}
+}

@@ -17,7 +17,8 @@ require('./gulp/webpack');
 
 gulp.task('serve', ['build'], function() {
     browserSync.init({
-        server: config.dist
+        server: config.dist,
+        open: false
     });
 
     gulp.watch(config.app + '/**/*.js', ['webpack:dev']);
@@ -27,6 +28,8 @@ gulp.task('serve', ['build'], function() {
     gulp.watch(config.app + '/**/*.{png,jpg,gif,svg}', ['images']);
     gulp.watch(config.dist + '/images/2x/*.{png,jpg,gif,svg}').on('change', browserSync.reload);
     gulp.watch(config.dist + '/*.js').on('change', browserSync.reload);
+    gulp.watch(config.app + 'blocks/**/*.js').on('change', browserSync.reload);
+    gulp.watch(config.dist + '/**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('build', ['styles', 'html', 'fonts','images', 'webpack:prod']);

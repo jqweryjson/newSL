@@ -1,5 +1,5 @@
-import 'owl.carousel/dist/owl.carousel.js';
-
+//import 'owl.carousel/dist/owl.carousel.js';
+/*
 export default class Slider {
     constructor(container) {
         this.container = container;
@@ -11,3 +11,4 @@ export default class Slider {
         this.container.owlCarousel(options);
     }
 }
+*/

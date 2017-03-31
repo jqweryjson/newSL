@@ -1,0 +1,115 @@
+.slider-promo {
+    position: relative;
+    height: 304px;
+    &__inner {
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__item {
+        height: 304px !important;
+        width: 100% !important;
+        background-size: cover;
+        background-position: 50% 50%;
+        display: block;
+        &_1 {
+            @include image2x('promo/1', 'jpg')
+        }
+    }
+    .col-xs-6 {
+        text-align: center;
+    }
+    &__title {
+        &-table {
+            margin-top: 110px;
+            display: table;
+            width: 100%;
+            vertical-align: middle;
+        }
+        text-shadow: 0 1px 5px rgba(27, 104, 34, 0.43);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 16px;
+        text-align: center;
+        padding-right: 54px;
+    }
+    .owl {
+        &-item {
+            transform: translateZ(0);
+        }
+        &-dots {
+            position: absolute;
+            bottom: 11px;
+            border-left: 0;
+            left: 50%;
+            width: 320px;
+            margin-left: -160px;
+            text-align: center;
+        }
+        &-dot {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            opacity: 0.75;
+            background-color: #fff;
+            box-shadow: 0 1px 5px rgba(27, 104, 34, 0.43);
+            transition: all .4s ease-in-out;
+            border-radius: 50%;
+            margin: 0 6px;
+            &.active {
+                opacity: 1;
+            }
+        }
+        &-prev {
+            @include image2x('icon/promo-prev');
+            position: absolute;
+            top: 50%;
+            left: 9px;
+            margin-top: -16px;
+            text-indent: -9999px;
+            z-index: 100;
+            background: none !important;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include image2x('icon/promo-prev');
+                content: '';
+                transition: all .2s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    transform: translate3d(-3px, 0, 0);
+                }
+            }
+        }
+        &-next {
+            @include image2x('icon/promo-next');
+            position: absolute;
+            top: 50%;
+            right: 9px;
+            margin-top: -16px;
+            text-indent: -9999px;
+            z-index: 100;
+            background: none !important;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include image2x('icon/promo-next');
+                content: '';
+                transition: all .2s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    transform: translate3d(3px, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+.owl-dots {
+    display: none;
+}

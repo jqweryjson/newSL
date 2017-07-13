@@ -1,5 +1,5 @@
 'use strict'
-//es6 imports
+//es6 imports   
 
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
@@ -8,4 +8,3 @@ window.$ = window.jQuery = jQuery;
 
 
 //console.log(Slider);
-

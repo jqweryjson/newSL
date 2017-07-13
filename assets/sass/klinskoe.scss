@@ -1,0 +1,7 @@
+.promo{
+	&__bg{
+		@include image1x ('bg.png');
+		background-position: center;
+		margin: auto;
+	}
+}

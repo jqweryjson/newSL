@@ -1,4 +1,4 @@
-html {
+html,body {
   font-family: sans-serif;
   /* 1 */
   line-height: 1.15;
@@ -7,6 +7,8 @@ html {
   /* 3 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
+  position: relative;
+  height: 100%;
   min-height: 100%;
 }
 /* Sections
@@ -35,7 +37,7 @@ input[type="url"],
 input[type="week"],
 select:focus,
 textarea {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 input[type="text"] {
   font-size: inherit;

@@ -1,0 +1,32 @@
+body{
+	font-family: roboto;
+}
+
+.header{
+	padding:15px 0;
+	@include background-gradient(#e31837,#000);
+	&__text{
+		font-size: 20px;
+		//padding: 20px 0;
+		color:#fff;
+	}
+	&__link{
+		color:#fff;
+		text-decoration: underline;
+		&:hover{
+			color:#000;
+		}
+	}
+}
+
+.send{
+	&__card{
+		padding-top: 10px;
+	}
+	&__button{
+		margin-right: 20px;
+	}
+	&__rest{
+		color:#000;
+	}
+}

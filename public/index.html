@@ -5,19 +5,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content=" ">
-    <meta name="keywords" content="" />
+    <meta name="description" content="Domino's Pizza Web API Test ">
+    <meta name="keywords" content="Domino's Pizza Web API Test" />
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/desktop.bundle.css">
-    <title></title>
+    <title>Domino's Pizza Web API Test</title>
 </head>
-<body>
+<body ng-app="app">
 
-
-
-
+    <div class="header">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <div class="header__text">
+                        <img src="./images/2x/logo.png" alt="" width="50"> Domino's Pizza Web API Test
+                    </div>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <a href="http://help.dominos.com.tr/help" class="header__link align-self-center">Документация</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="send" ng-controller='cntrl'>
+        <div class="container">
+            <div id="accordion" class="send__card" role="tablist" aria-multiselectable="true">
+                <div class="card " ng-repeat="pole in data">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" class="send__name" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                + {{ pole.descr }}
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block" ng-repeat=" meth in pole.method">
+                            <button type="button" class="btn btn-outline-primary send__button">{{meth}}</button>
+                            <span class="send__rest" ng-repeat=" act in pole.action">{{act}}</span>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <script src="desktop.bundle.js"></script>

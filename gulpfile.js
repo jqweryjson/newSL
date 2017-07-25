@@ -14,6 +14,7 @@ require('./gulp/styles');
 require('./gulp/templates');
 require('./gulp/images');
 require('./gulp/webpack');
+require('./gulp/ts');
 
 gulp.task('serve', ['build'], function() {
     browserSync.init({
@@ -35,6 +36,7 @@ gulp.task('serve', ['build'], function() {
 gulp.task('build', ['styles', 'html', 'fonts','images', 'webpack:prod']);
 
 gulp.task('default', ['serve']);
+
 
 gulp.task('git', ['build'], function() {
     return gulp.src('./git/*')

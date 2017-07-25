@@ -10,6 +10,7 @@
   "author": "A.Sofin (K.Akutin-mod)",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.6.5",
     "babel-loader": "^5.4.0",
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.0",
@@ -33,17 +34,33 @@
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^3.2.1",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.0",
     "ngrok": "^2.2.4",
     "optipng-bin": "^3.0.4",
     "postcss-assets": "^3.0.3",
     "rimraf": "^2.5.0",
+    "tslint": "^3.7.4",
+    "typings": "^1.0.4",
     "vue": "^2.2.6",
     "vue-loader": "^11.3.3",
     "webpack": "^1.13.3"
   },
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "angular-in-memory-web-api": "~0.2.4",
+    "systemjs": "0.19.40",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4"
   }
 }

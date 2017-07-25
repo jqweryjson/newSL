@@ -23,7 +23,7 @@ angular.module('app', [])
 		{
 			'descr':'ShoppingCart - Вернуть корзину',
 			'method':['GET'],
-			'action':['rest/ShoppingCart'],
+			'action':['http://localhost:10020/rest/ShoppingCart'],
 		},
 	];
 

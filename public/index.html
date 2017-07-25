@@ -43,9 +43,9 @@
                     </div>
                     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                         <div class="card-block" ng-repeat=" meth in pole.method">
-                            <button type="button" class="btn btn-outline-primary send__button">{{meth}}</button>
+                            <button type="button" class="btn btn-outline-primary send__button" ng-click="sendResp(pole.action)">{{meth}}</button>
                             <span class="send__rest" ng-repeat=" act in pole.action">{{act}}</span>
-                            <input type="text">
+
                         </div>
                     </div>
                 </div>

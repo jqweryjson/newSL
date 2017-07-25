@@ -21,23 +21,20 @@ angular.module('app', [])
 
 	s.data = [
 		{
-			'descr':'ActiveCampaignProvider - Список всех акции',
+			'descr':'ShoppingCart - Вернуть корзину',
 			'method':['GET'],
-			'action':['rest/ActiveCampaignProvider'],
-		},
-		{
-			'descr':'Address - ',
-			'method':{'GET','GET','GET','GET','GET'},
-			'action':['rest/Address',
-			'rest/Address?cityCode={cityCode}',
-			'rest/Address?cityCode={cityCode}&discrictCode={discrictCode}',
-			'rest/Address?cityCode={cityCode}&discrictCode={discrictCode}&countyCode={countyCode}&roadOrStreet={roadOrStreet}',
-			'rest/Address?cityCode={cityCode}&countyCode={countyCode}&tmp1={tmp1}&tmp2={tmp2}'],
+			'action':['rest/ShoppingCart'],
 		},
 	];
 
 
 
+	s.sendResp = function(resp){
+		$http.get(resp)
+			.success(function(d){
+				s.respond = d;
+			});
+	};
 
 }]);
 
